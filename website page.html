@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M1 Pro Media | Interactive Service Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F5F5DC;
+            color: #4A4A4A;
+        }
+        .active-process, .active-service {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+            background-color: #A0522D !important;
+            color: #F5F5DC !important;
+        }
+        .transition-all {
+            transition: all 0.3s ease-in-out;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            font-weight: 800;
+            color: #696969;
+            letter-spacing: -0.02em;
+        }
+        .section-intro {
+            color: #696969;
+        }
+        .btn-primary {
+            background-color: #A0522D;
+            color: #F5F5DC;
+            font-weight: 700;
+        }
+        .btn-primary:hover {
+            background-color: #8B4513;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Chosen Palette: Elegant & Earthy -->
+    <!-- Application Structure Plan: The application is structured as a client journey, starting with a high-level overview and progressively detailing the services. It begins with an introduction, followed by an interactive "Our Process" diagram to explain the workflow. This leads to a filterable "Core Services" grid, allowing users to explore areas of interest without being overwhelmed. Specialized capabilities are highlighted next, followed by key differentiators ("Why Choose Us?") and a final call to action. This thematic, interactive structure was chosen to guide potential clients logically from "what you do" to "how you do it" and finally "why we should hire you," which is more engaging and persuasive than a static list. -->
+    <!-- Visualization & Content Choices: 1. Production Process -> Goal: Organize -> Viz/Method: Interactive HTML/CSS flowchart -> Interaction: Clickable stages reveal detailed descriptions. -> Justification: Clarifies the client's journey and organizes services within a workflow context, superior to a simple list. Method: HTML/CSS/JS. 2. Service Offerings -> Goal: Organize/Compare -> Viz/Method: Interactive card grid -> Interaction: Clicking a category filters and displays relevant sub-services. -> Justification: Allows users to self-select information, making the dense list of services digestible and preventing information overload. Method: HTML/CSS/JS. No quantitative data was present, so no charts (Chart.js/Plotly) were used; the focus is on information architecture and interaction. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+
+        <header class="text-center mb-16 md:mb-24">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-4" style="color: #8B4513;">M1 Pro Media</h1>
+            <p class="text-xl md:text-2xl font-light max-w-3xl mx-auto section-intro">Transforming Your Vision into a Cinematic Reality. We are a full-service video production company dedicated to creating compelling visual stories that drive results.</p>
+        </header>
+
+        <main>
+            <section id="process" class="mb-16 md:mb-24">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl section-title">Our Proven Process</h2>
+                    <p class="mt-4 max-w-2xl mx-auto section-intro">We follow a structured, collaborative process to ensure your project's success from concept to completion. Click on any stage to learn more about how we bring your ideas to life.</p>
+                </div>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0">
+                    <div id="process-step-1" class="process-step card-hover cursor-pointer p-6 rounded-lg w-full md:w-56 text-center transition-all bg-white shadow-md" style="background-color: #D2B48C;" data-step="1">
+                        <div class="text-2xl font-bold mb-2">①</div>
+                        <h3 class="font-bold text-lg">Strategy & Consultation</h3>
+                    </div>
+                    <div class="text-gray-400 font-bold text-2xl mx-4 hidden md:block">→</div>
+                    <div id="process-step-2" class="process-step card-hover cursor-pointer p-6 rounded-lg w-full md:w-56 text-center transition-all bg-white shadow-md" style="background-color: #D2B48C;" data-step="2">
+                        <div class="text-2xl font-bold mb-2">②</div>
+                        <h3 class="font-bold text-lg">Production & Filming</h3>
+                    </div>
+                    <div class="text-gray-400 font-bold text-2xl mx-4 hidden md:block">→</div>
+                    <div id="process-step-3" class="process-step card-hover cursor-pointer p-6 rounded-lg w-full md:w-56 text-center transition-all bg-white shadow-md" style="background-color: #D2B48C;" data-step="3">
+                        <div class="text-2xl font-bold mb-2">③</div>
+                        <h3 class="font-bold text-lg">Post-Production</h3>
+                    </div>
+                    <div class="text-gray-400 font-bold text-2xl mx-4 hidden md:block">→</div>
+                    <div id="process-step-4" class="process-step card-hover cursor-pointer p-6 rounded-lg w-full md:w-56 text-center transition-all bg-white shadow-md" style="background-color: #D2B48C;" data-step="4">
+                        <div class="text-2xl font-bold mb-2">④</div>
+                        <h3 class="font-bold text-lg">Delivery & Distribution</h3>
+                    </div>
+                </div>
+                <div id="process-details" class="mt-10 p-8 rounded-lg shadow-inner min-h-[150px] transition-all" style="background-color: rgba(210, 180, 140, 0.2);">
+                    <p class="text-center section-intro text-lg">Select a stage above to see the details.</p>
+                </div>
+            </section>
+
+            <section id="services" class="mb-16 md:mb-24">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl section-title">Our Core Services</h2>
+                    <p class="mt-4 max-w-2xl mx-auto section-intro">We offer a comprehensive suite of video production services tailored to your specific needs. Explore our main categories below to discover how we can help you achieve your goals.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                    <div class="service-card card-hover cursor-pointer p-6 rounded-lg text-center transition-all bg-white shadow-md" style="background-color: #D2B48C;" data-service="corporate">
+                        <h3 class="font-bold text-lg">Corporate</h3>
+                    </div>
+                    <div class="service-card card-hover cursor-pointer p-6 rounded-lg text-center transition-all bg-white shadow-md" style="background-color: #D2B48C;" data-service="commercials">
+                        <h3 class="font-bold text-lg">Commercials</h3>
+                    </div>
+                    <div class="service-card card-hover cursor-pointer p-6 rounded-lg text-center transition-all bg-white shadow-md" style="background-color: #D2B48C;" data-service="social">
+                        <h3 class="font-bold text-lg">Social Media</h3>
+                    </div>
+                     <div class="service-card card-hover cursor-pointer p-6 rounded-lg text-center transition-all bg-white shadow-md" style="background-color: #D2B48C;" data-service="product">
+                        <h3 class="font-bold text-lg">Product</h3>
+                    </div>
+                    <div class="service-card card-hover cursor-pointer p-6 rounded-lg text-center transition-all bg-white shadow-md" style="background-color: #D2B48C;" data-service="event">
+                        <h3 class="font-bold text-lg">Event Coverage</h3>
+                    </div>
+                    <div class="service-card card-hover cursor-pointer p-6 rounded-lg text-center transition-all bg-white shadow-md" style="background-color: #D2B48C;" data-service="realestate">
+                        <h3 class="font-bold text-lg">Real Estate</h3>
+                    </div>
+                    <div class="service-card card-hover cursor-pointer p-6 rounded-lg text-center transition-all bg-white shadow-md" style="background-color: #D2B48C;" data-service="specialized">
+                        <h3 class="font-bold text-lg">Specialized</h3>
+                    </div>
+                     <div class="service-card card-hover cursor-pointer p-6 rounded-lg text-center transition-all bg-white shadow-md" style="background-color: #D2B48C;" data-service="all">
+                        <h3 class="font-bold text-lg">Show All</h3>
+                    </div>
+                </div>
+                <div id="service-details" class="mt-10 p-8 rounded-lg shadow-inner min-h-[200px] transition-all" style="background-color: rgba(210, 180, 140, 0.2);">
+                    <p class="text-center section-intro text-lg">Select a service category to view details.</p>
+                </div>
+            </section>
+            
+            <section id="why-us" class="mb-16 md:mb-24">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl section-title">Why Partner With M1 Pro Media?</h2>
+                    <p class="mt-4 max-w-2xl mx-auto section-intro">We're more than just videographers; we're creative partners invested in your success. Our unique approach combines technical expertise with strategic thinking to deliver exceptional value.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-md" style="background-color: #F5F5F5;">
+                        <div class="text-4xl mb-4" style="color:#A0522D;">🎯</div>
+                        <h3 class="text-xl font-bold mb-2">Strategic Approach</h3>
+                        <p>We work to understand your goals and audience to create videos that don't just look great, but also deliver measurable results and a clear return on investment.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md" style="background-color: #F5F5F5;">
+                        <div class="text-4xl mb-4" style="color:#A0522D;">🎬</div>
+                        <h3 class="text-xl font-bold mb-2">Full-Service Production</h3>
+                        <p>From initial concept and scriptwriting to filming, editing, and final delivery, we handle every aspect of the production process, ensuring a seamless and high-quality experience.</p>
+                    </div>
+                     <div class="bg-white p-8 rounded-lg shadow-md" style="background-color: #F5F5F5;">
+                        <div class="text-4xl mb-4" style="color:#A0522D;">✨</div>
+                        <h3 class="text-xl font-bold mb-2">Creative & Technical Excellence</h3>
+                        <p>Our team uses state-of-the-art equipment and creative storytelling techniques to produce polished, professional videos that captivate your audience and elevate your brand.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cta" class="text-center bg-white py-16 px-8 rounded-lg shadow-xl" style="background-color: #D2B48C;">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4" style="color: #696969;">Ready to Tell Your Story?</h2>
+                <p class="text-lg max-w-xl mx-auto mb-8">Let's discuss how we can create a powerful video that connects with your audience and achieves your business objectives. Get in touch for a free consultation.</p>
+                <a href="https://www.m1promedia.com/contact" target="_blank" class="inline-block btn-primary rounded-full px-10 py-4 transition-all hover:shadow-lg">Contact Us Today</a>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const processSteps = document.querySelectorAll('.process-step');
+            const processDetailsContainer = document.getElementById('process-details');
+
+            const serviceCards = document.querySelectorAll('.service-card');
+            const serviceDetailsContainer = document.getElementById('service-details');
+
+            const processData = {
+                1: {
+                    title: "Strategy & Consultation",
+                    description: "This is where every great project begins. We dive deep into your business goals, target audience, and key messaging. We collaborate with you on creative concepts, develop a detailed plan, and outline a strategy designed to deliver a powerful return on investment. Our goal is to ensure the final video is perfectly aligned with your vision and objectives."
+                },
+                2: {
+                    title: "Production & Filming",
+                    description: "With a solid plan in place, our professional crew brings the vision to life. We use state-of-the-art cameras, lighting, and audio equipment to capture stunning, high-quality footage. Whether on-location or in-studio, we manage every aspect of the shoot to ensure a smooth, efficient, and creative process."
+                },
+                3: {
+                    title: "Post-Production",
+                    description: "This is where the magic happens. Our talented editors assemble the raw footage into a compelling narrative. This stage includes professional video editing, color grading to create the perfect mood, sound design and mixing for crystal-clear audio, and adding motion graphics or titles to enhance the final product. We meticulously polish every detail."
+                },
+                4: {
+                    title: "Delivery & Distribution",
+                    description: "Once the video is finalized and approved, we deliver it in the optimal formats for your intended platforms, whether for broadcast, your website, or social media. We also provide guidance on the best strategies for deploying your video to maximize its reach, engagement, and overall impact."
+                }
+            };
+            
+            const servicesData = {
+                corporate: {
+                    title: 'Corporate Videos',
+                    items: [
+                        '<strong>Brand Storytelling:</strong> Crafting compelling narratives that communicate your company\'s mission, vision, and values.',
+                        '<strong>Promotional & "About Us" Videos:</strong> Introducing your team and unique business proposition for websites and social profiles.',
+                        '<strong>Internal Communications & Training:</strong> Producing professional content for employee onboarding, training modules, and announcements.'
+                    ]
+                },
+                commercials: {
+                    title: 'Commercials & Advertising',
+                    items: [
+                        '<strong>Broadcast & Web Commercials:</strong> High-impact ads optimized for television, streaming, and online platforms to drive action.',
+                        '<strong>Product & Service Advertisements:</strong> Targeted ads that clearly demonstrate the value and benefits of your offerings.'
+                    ]
+                },
+                social: {
+                    title: 'Social Media Videos',
+                    items: [
+                        '<strong>Platform-Optimized Content:</strong> Dynamic short-form and long-form video for Instagram, TikTok, Facebook, and LinkedIn.',
+                        '<strong>Video Ad Campaigns:</strong> Developing and producing a series of videos for paid social campaigns to generate leads and drive sales.'
+                    ]
+                },
+                product: {
+                    title: 'Product Videos',
+                    items: [
+                        '<strong>Product Demonstrations & How-To\'s:</strong> Clear, concise videos showcasing how your product works for e-commerce and customer support.',
+                        '<strong>Lifestyle & E-commerce Videos:</strong> Showing your product in action to help customers envision it in their lives.'
+                    ]
+                },
+                event: {
+                    title: 'Event Coverage',
+                    items: [
+                        '<strong>Conferences & Corporate Functions:</strong> Professional multi-camera coverage of trade shows, product launches, and corporate events.',
+                        '<strong>Highlight Reels:</strong> Energetic summary videos that capture the key moments and atmosphere of your event.'
+                    ]
+                },
+                realestate: {
+                    title: 'Real Estate Videography',
+                    items: [
+                        '<strong>Property Showcase Tours:</strong> Cinematic walkthrough videos that create an immersive experience for potential buyers.',
+                        '<strong>Lifestyle & Neighborhood Videos:</strong> Attracting buyers by showcasing the lifestyle and amenities of a community.'
+                    ]
+                },
+                specialized: {
+                    title: 'Specialized Videography',
+                    items: [
+                        '<strong>Testimonial & Interview Videos:</strong> Building trust by capturing authentic customer success stories and expert interviews.',
+                        '<strong>Drone & Aerial Videography:</strong> Capturing stunning aerial shots that add high-production value to any project.'
+                    ]
+                }
+            };
+
+            function updateProcessDetails(step) {
+                const data = processData[step];
+                if (data) {
+                    processDetailsContainer.innerHTML = `
+                        <h3 class="font-bold text-2xl mb-3 text-center" style="color: #696969;">${data.title}</h3>
+                        <p class="text-lg leading-relaxed text-center">${data.description}</p>
+                    `;
+                }
+            }
+            
+             function updateServiceDetails(serviceKey) {
+                const data = servicesData[serviceKey];
+                if (data) {
+                    let itemsHtml = data.items.map(item => `<li class="mb-2">${item}</li>`).join('');
+                    serviceDetailsContainer.innerHTML = `
+                        <h3 class="font-bold text-2xl mb-4 text-center" style="color: #696969;">${data.title}</h3>
+                        <ul class="list-disc list-inside text-lg space-y-2 max-w-2xl mx-auto">${itemsHtml}</ul>
+                    `;
+                }
+            }
+            
+            function showAllServices() {
+                let allServicesHtml = '';
+                for (const key in servicesData) {
+                    const data = servicesData[key];
+                    let itemsHtml = data.items.map(item => `<li class="mb-2">${item}</li>`).join('');
+                     allServicesHtml += `
+                        <div class="mb-8">
+                            <h3 class="font-bold text-2xl mb-4 text-center" style="color: #696969;">${data.title}</h3>
+                            <ul class="list-disc list-inside text-lg space-y-2 max-w-2xl mx-auto">${itemsHtml}</ul>
+                        </div>
+                     `;
+                }
+                serviceDetailsContainer.innerHTML = allServicesHtml;
+            }
+
+            processSteps.forEach(step => {
+                step.addEventListener('click', () => {
+                    processSteps.forEach(s => s.classList.remove('active-process'));
+                    step.classList.add('active-process');
+                    const stepNumber = step.getAttribute('data-step');
+                    updateProcessDetails(stepNumber);
+                });
+            });
+            
+            serviceCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    serviceCards.forEach(s => s.classList.remove('active-service'));
+                    card.classList.add('active-service');
+                    const serviceKey = card.getAttribute('data-service');
+                    if (serviceKey === 'all') {
+                        showAllServices();
+                    } else {
+                        updateServiceDetails(serviceKey);
+                    }
+                });
+            });
+            
+            document.querySelector('.process-step[data-step="1"]').click();
+            document.querySelector('.service-card[data-service="corporate"]').click();
+        });
+    </script>
+</body>
+</html>
